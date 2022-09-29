@@ -138,6 +138,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
+        ViewDetails viewDetails = new ViewDetails(employeelist);
+        splitPane.setRightComponent(viewDetails);
+        
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
