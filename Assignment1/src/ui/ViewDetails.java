@@ -84,6 +84,11 @@ public class ViewDetails extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tbDetails);
 
         btnView.setText("View");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -259,16 +264,57 @@ public class ViewDetails extends javax.swing.JPanel {
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
         
-        int  selectedIndex = tbDetails.getSelectedRow();
-        
-        if(selectedIndex < 0){
-            JOptionPane.showMessageDialog(this, "PLease select a row to delete.");
-            return;
-        }
+//        int  selectedIndex = tbDetails.getSelectedRow();
+//        
+//        if(selectedIndex < 0){
+//            JOptionPane.showMessageDialog(this, "Please select a siingle row to delete.");
+//            return;
+//        }
         DefaultTableModel model = (DefaultTableModel) tbDetails.getModel();
+        
+//        EmployeeProfile selectedEmp = (EmployeeProfile) model.getValueAt(selectedIndex, 0);
+//        
+//        employeelist.deleteEmp(selectedEmp);
+        
+//        JOptionPane.showMessageDialog(this, "Employee is deleted");
+
+        if(tbDetails.getSelectedRowCount() == 1){
+            model.removeRow(tbDetails.getSelectedRow());
+            JOptionPane.showMessageDialog(this, "Employee is deleted");
+        }else{
+            if(tbDetails.getRowCount() == 0){
+                JOptionPane.showMessageDialog(this, "Table is Empty");
+            }else{
+                JOptionPane.showMessageDialog(this, "Please select only Single Row");
+            }
+        }
         
         
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        // TODO add your handling code here:
+        
+        int  selectedIndex = tbDetails.getSelectedRow();
+        
+        if(selectedIndex < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row to view details.");
+            return;
+        }
+        DefaultTableModel model = (DefaultTableModel) tbDetails.getModel();
+        EmployeeProfile selectedEmp = (EmployeeProfile) model.getValueAt(selectedIndex, 0);
+        
+        txtName.setText(selectedEmp.getEmpName());
+        txtEmpID.setText(String.valueOf(selectedEmp.getEmpID()));
+        txtEmpAge.setText(String.valueOf(selectedEmp.getEmpAge()));
+        txtEmpGen.setText(selectedEmp.getEmpGen());
+        txtStartDate.setText(selectedEmp.getStartDate());
+        txtLevel.setText(String.valueOf(selectedEmp.getLevel()));
+        txtTeamInfo.setText(selectedEmp.getTeamInfo());
+        txtEmpPos.setText(selectedEmp.getEmpPos());
+        txtPhoneNumber.setText(String.valueOf(selectedEmp.getPhoneNumber()));
+        txtEmpEmail.setText(selectedEmp.getEmpEmail());
+    }//GEN-LAST:event_btnViewActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

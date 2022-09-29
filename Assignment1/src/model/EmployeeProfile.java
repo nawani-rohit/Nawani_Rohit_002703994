@@ -109,4 +109,9 @@ public class EmployeeProfile {
     public void setPhoto(String photo) {
         this.photo = photo;
     }
+    
+    @Override
+    public String toString(){
+        return StartDate;
+    }
 }
