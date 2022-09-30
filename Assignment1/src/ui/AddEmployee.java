@@ -219,43 +219,49 @@ public class AddEmployee extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        String Name = txtName.getText();
-        String EmpID = txtEmpID.getText();
-        int EmpAge = Integer.parseInt(txtEmpAge.getText());
-        String EmpGen = txtEmpGen.getText();
-        String StartDate = txtStartDate.getText();
-        int level = Integer.parseInt(txtLevel.getText());
-        String TeamInfo = txtTeamInfo.getText();
-        String EmpPos = txtEmpPos.getText();
-        int PhoneNumber = Integer.parseInt(txtPhoneNumber.getText());
-        String EmpEmail = txtEmpEmail.getText();
         
-        EmployeeProfile ep = employeelist.addNewEmp();
+        if(txtName.getText().equals("") || txtEmpID.getText().equals("")|| txtEmpAge.getText().equals("") || txtEmpGen.getText().equals("") || txtStartDate.getText().equals("")|| txtLevel.getText().equals("") || txtTeamInfo.getText().equals("") || txtEmpPos.getText().equals("")|| txtPhoneNumber.getText().equals("") || txtEmpEmail.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Please fill all the fields");
+        }
+        else{
         
-        ep.setEmpName(Name);
-        ep.setEmpID(EmpID);
-        ep.setEmpAge(EmpAge);
-        ep.setEmpGen(EmpGen);
-        ep.setStartDate(StartDate);
-        ep.setLevel(level);
-        ep.setTeamInfo(TeamInfo);
-        ep.setEmpPos(EmpPos);
-        ep.setPhoneNumber(PhoneNumber);
-        ep.setEmpEmail(EmpEmail);
-        
-        JOptionPane.showMessageDialog(this, "New Employee added.");
-        
-        txtName.setText("");
-        txtEmpID.setText("");
-        txtEmpAge.setText("");
-        txtEmpGen.setText("");
-        txtStartDate.setText("");
-        txtLevel.setText("");
-        txtTeamInfo.setText("");
-        txtEmpPos.setText("");
-        txtPhoneNumber.setText("");
-        txtEmpEmail.setText("");
-        
+            String Name = txtName.getText();
+            String EmpID = txtEmpID.getText();
+            int EmpAge = Integer.parseInt(txtEmpAge.getText());
+            String EmpGen = txtEmpGen.getText();
+            String StartDate = txtStartDate.getText();
+            int level = Integer.parseInt(txtLevel.getText());
+            String TeamInfo = txtTeamInfo.getText();
+            String EmpPos = txtEmpPos.getText();
+            int PhoneNumber = Integer.parseInt(txtPhoneNumber.getText());
+            String EmpEmail = txtEmpEmail.getText();
+
+            EmployeeProfile ep = employeelist.addNewEmp();
+
+            ep.setEmpName(Name);
+            ep.setEmpID(EmpID);
+            ep.setEmpAge(EmpAge);
+            ep.setEmpGen(EmpGen);
+            ep.setStartDate(StartDate);
+            ep.setLevel(level);
+            ep.setTeamInfo(TeamInfo);
+            ep.setEmpPos(EmpPos);
+            ep.setPhoneNumber(PhoneNumber);
+            ep.setEmpEmail(EmpEmail);
+
+            JOptionPane.showMessageDialog(this, "New Employee added.");
+
+            txtName.setText("");
+            txtEmpID.setText("");
+            txtEmpAge.setText("");
+            txtEmpGen.setText("");
+            txtStartDate.setText("");
+            txtLevel.setText("");
+            txtTeamInfo.setText("");
+            txtEmpPos.setText("");
+            txtPhoneNumber.setText("");
+            txtEmpEmail.setText("");
+        }
         
     }//GEN-LAST:event_btnSaveActionPerformed
 

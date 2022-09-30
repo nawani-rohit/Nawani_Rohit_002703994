@@ -4,6 +4,7 @@
  */
 package ui;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.EmployeeList;
@@ -96,6 +97,11 @@ public class UpdateDetails extends javax.swing.JPanel {
 
         btnUpdate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         lblName.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         lblName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -264,7 +270,7 @@ public class UpdateDetails extends javax.swing.JPanel {
         
         txtName.setText(selectedEmp.getEmpName());
         txtEmpID.setText(String.valueOf(selectedEmp.getEmpID()));
-        txtEmpAge.setText(String.valueOf(selectedEmp.getEmpName()));
+        txtEmpAge.setText(String.valueOf(selectedEmp.getEmpAge()));
         txtEmpGen.setText(selectedEmp.getEmpGen());
         txtStartDate.setText(selectedEmp.getStartDate());
         txtLevel.setText(String.valueOf(selectedEmp.getLevel()));
@@ -274,6 +280,49 @@ public class UpdateDetails extends javax.swing.JPanel {
         txtEmpEmail.setText(selectedEmp.getEmpEmail());
         
     }//GEN-LAST:event_tbDetailsMouseClicked
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        
+        String updatedName = txtName.getText();
+        String updatedEmpID = txtEmpID.getText();
+        int updatedEmpAge = Integer.parseInt(txtEmpAge.getText());
+        String updatedEmpGen = txtEmpGen.getText();
+        String updatedStartDate = txtStartDate.getText();
+        int updatedLevel = Integer.parseInt(txtLevel.getText());
+        String updatedTeamInfo = txtTeamInfo.getText();
+        String updatedEmpPos = txtEmpPos.getText();
+        int updatedPhoneNumber = Integer.parseInt(txtPhoneNumber.getText());
+        String updatedEmpEmail = txtEmpEmail.getText();
+        
+        int  selectedIndex = tbDetails.getSelectedRow();
+        
+        if(selectedIndex < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row to view details.");
+            return;
+        }
+        DefaultTableModel model = (DefaultTableModel) tbDetails.getModel();
+        EmployeeProfile selectedEmp = (EmployeeProfile) model.getValueAt(selectedIndex, 0);
+        
+        selectedEmp.setEmpName(updatedName);
+        selectedEmp.setEmpID(updatedEmpID);
+        selectedEmp.setEmpAge(updatedEmpAge);
+        selectedEmp.setEmpGen(updatedEmpGen);
+        selectedEmp.setStartDate(updatedStartDate);
+        selectedEmp.setLevel(updatedLevel);
+        selectedEmp.setTeamInfo(updatedTeamInfo);
+        selectedEmp.setEmpPos(updatedEmpPos);
+        selectedEmp.setPhoneNumber(updatedPhoneNumber);
+        selectedEmp.setEmpEmail(updatedEmpEmail);
+        
+        
+        
+        ArrayList<EmployeeProfile>empArrayList = employeelist.getEmployeelist();
+        
+        empArrayList.set(selectedIndex,selectedEmp);
+        populateTable();
+        
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
