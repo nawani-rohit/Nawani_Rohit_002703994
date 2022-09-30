@@ -36,25 +36,38 @@ public class MainJFrame extends javax.swing.JFrame {
 
         splitPane = new javax.swing.JSplitPane();
         workArea = new javax.swing.JPanel();
+        lblHeading = new javax.swing.JLabel();
         controlPanel = new javax.swing.JPanel();
         btnAdd = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HR");
 
+        splitPane.setPreferredSize(new java.awt.Dimension(1200, 800));
+
         workArea.setPreferredSize(new java.awt.Dimension(700, 500));
+
+        lblHeading.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHeading.setText("Human Resourse Management");
 
         javax.swing.GroupLayout workAreaLayout = new javax.swing.GroupLayout(workArea);
         workArea.setLayout(workAreaLayout);
         workAreaLayout.setHorizontalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 480, Short.MAX_VALUE)
+            .addGroup(workAreaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblHeading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         workAreaLayout.setVerticalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 488, Short.MAX_VALUE)
+            .addGroup(workAreaLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(lblHeading)
+                .addContainerGap(1433, Short.MAX_VALUE))
         );
 
         splitPane.setRightComponent(workArea);
@@ -84,16 +97,26 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnUpdate.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        btnUpdate.setText("Update Employee Details");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         controlPanelLayout.setVerticalGroup(
@@ -103,9 +126,11 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(btnAdd)
                 .addGap(110, 110, 110)
                 .addComponent(btnView)
-                .addGap(110, 110, 110)
+                .addGap(117, 117, 117)
+                .addComponent(btnUpdate)
+                .addGap(105, 105, 105)
                 .addComponent(btnSearch)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(controlPanel);
@@ -115,18 +140,19 @@ public class MainJFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
+                .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1194, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
+                .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
@@ -146,6 +172,12 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        UpdateDetails updateDetails = new UpdateDetails(employeelist);
+        splitPane.setRightComponent(updateDetails);
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,8 +217,10 @@ public class MainJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
     private javax.swing.JPanel controlPanel;
+    private javax.swing.JLabel lblHeading;
     private javax.swing.JSplitPane splitPane;
     private javax.swing.JPanel workArea;
     // End of variables declaration//GEN-END:variables

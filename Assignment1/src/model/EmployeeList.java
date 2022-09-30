@@ -31,4 +31,8 @@ public class EmployeeList {
         employeelist.add(newEmp);
         return newEmp;
     }
+    
+    public void deleteEmp(EmployeeProfile ep){
+        employeelist.remove(ep);
+    }
 }
