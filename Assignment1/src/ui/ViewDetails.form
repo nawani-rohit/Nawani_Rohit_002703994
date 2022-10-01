@@ -32,7 +32,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="206" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="269" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -47,9 +47,14 @@
                                   <Component id="lblEmpPos" alignment="1" min="-2" pref="140" max="-2" attributes="0"/>
                                   <Component id="lblContactInfo" alignment="1" min="-2" pref="140" max="-2" attributes="0"/>
                                   <Component id="lblPhoneNumber" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblPhoto" alignment="1" min="-2" pref="140" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="txtEmpEmail" min="-2" pref="300" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtEmpEmail" pref="300" max="32767" attributes="0"/>
+                                  <Component id="lblPicPath" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lblpic" alignment="0" max="32767" attributes="0"/>
+                              </Group>
                               <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -142,7 +147,16 @@
                   <Component id="lblEmpEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtEmpEmail" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="150" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblPhoto" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="lblpic" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblPicPath" min="-2" pref="23" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="7" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -329,6 +343,15 @@
         <Property name="text" type="java.lang.String" value="Contact Phone Number:"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JLabel" name="lblPhoto">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="15" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Photo:"/>
+      </Properties>
+    </Component>
     <Component class="javax.swing.JTextField" name="txtName">
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmpID">
@@ -348,6 +371,10 @@
     <Component class="javax.swing.JTextField" name="txtPhoneNumber">
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmpEmail">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblpic">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblPicPath">
     </Component>
   </SubComponents>
 </Form>

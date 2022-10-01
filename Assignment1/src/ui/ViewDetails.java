@@ -4,6 +4,7 @@
  */
 package ui;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.EmployeeList;
@@ -53,6 +54,7 @@ public class ViewDetails extends javax.swing.JPanel {
         lblContactInfo = new javax.swing.JLabel();
         lblEmpEmail = new javax.swing.JLabel();
         lblPhoneNumber = new javax.swing.JLabel();
+        lblPhoto = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         txtEmpID = new javax.swing.JTextField();
         txtEmpAge = new javax.swing.JTextField();
@@ -63,6 +65,8 @@ public class ViewDetails extends javax.swing.JPanel {
         txtEmpPos = new javax.swing.JTextField();
         txtPhoneNumber = new javax.swing.JTextField();
         txtEmpEmail = new javax.swing.JTextField();
+        lblpic = new javax.swing.JLabel();
+        lblPicPath = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(100, 900));
 
@@ -163,6 +167,10 @@ public class ViewDetails extends javax.swing.JPanel {
         lblPhoneNumber.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblPhoneNumber.setText("Contact Phone Number:");
 
+        lblPhoto.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        lblPhoto.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblPhoto.setText("Photo:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -176,7 +184,7 @@ public class ViewDetails extends javax.swing.JPanel {
                             .addComponent(jScrollPane1))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 206, Short.MAX_VALUE)
+                        .addGap(269, 269, 269)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -190,9 +198,13 @@ public class ViewDetails extends javax.swing.JPanel {
                                     .addComponent(lblTeamInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblEmpPos, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblContactInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblPhoneNumber))
+                                    .addComponent(lblPhoneNumber)
+                                    .addComponent(lblPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(36, 36, 36)
-                                .addComponent(txtEmpEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtEmpEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                                    .addComponent(lblPicPath, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblpic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(194, 194, 194))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -265,7 +277,14 @@ public class ViewDetails extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEmpEmail)
                     .addComponent(txtEmpEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPhoto)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblpic, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblPicPath, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -284,8 +303,18 @@ public class ViewDetails extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(this,"Deleted");
         populateTable();
         
-
-
+        txtName.setText("");
+        txtEmpID.setText("");
+        txtEmpAge.setText("");
+        txtEmpGen.setText("");
+        txtStartDate.setText("");
+        txtLevel.setText("");
+        txtTeamInfo.setText("");
+        txtEmpPos.setText("");
+        txtPhoneNumber.setText("");
+        txtEmpEmail.setText("");
+        lblpic.setIcon(null);
+        lblPicPath.setVisible(false);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
@@ -311,7 +340,12 @@ public class ViewDetails extends javax.swing.JPanel {
         txtPhoneNumber.setText(String.valueOf(selectedEmp.getPhoneNumber()));
         txtEmpEmail.setText(selectedEmp.getEmpEmail());
         
+        lblPicPath.setText(selectedEmp.getPhoto());
+        ImageIcon i = new ImageIcon(lblPicPath.getText());
+        lblpic.setIcon(i);
         
+        
+        lblPicPath.setVisible(false);
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void tbDetailsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbDetailsMouseClicked
@@ -332,9 +366,12 @@ public class ViewDetails extends javax.swing.JPanel {
     private javax.swing.JLabel lblLevel;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPhoneNumber;
+    private javax.swing.JLabel lblPhoto;
+    private javax.swing.JLabel lblPicPath;
     private javax.swing.JLabel lblStartDate;
     private javax.swing.JLabel lblTeamInfo;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblpic;
     private javax.swing.JTable tbDetails;
     private javax.swing.JTextField txtEmpAge;
     private javax.swing.JTextField txtEmpEmail;
