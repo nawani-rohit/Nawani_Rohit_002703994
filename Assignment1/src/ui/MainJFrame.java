@@ -45,10 +45,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HR");
+        setPreferredSize(new java.awt.Dimension(1200, 1000));
 
         splitPane.setPreferredSize(new java.awt.Dimension(1200, 800));
 
-        workArea.setPreferredSize(new java.awt.Dimension(700, 500));
+        workArea.setPreferredSize(new java.awt.Dimension(800, 1200));
 
         lblHeading.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -171,6 +172,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
+        SearchEmployee searchEmp = new SearchEmployee(employeelist);
+        splitPane.setRightComponent(searchEmp);
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed

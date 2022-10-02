@@ -69,9 +69,11 @@ public class UpdateDetails extends javax.swing.JPanel {
         lblpic = new javax.swing.JLabel();
         lblPicPath = new javax.swing.JLabel();
 
+        setPreferredSize(new java.awt.Dimension(800, 1200));
+
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("View Employee Details");
+        lblTitle.setText("Update Employee Details");
 
         tbDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -310,15 +312,20 @@ public class UpdateDetails extends javax.swing.JPanel {
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
         
+        if(txtName.getText().trim().equals("") || txtEmpID.getText().trim().equals("")|| txtEmpAge.getText().trim().equals("") || txtEmpGen.getText().trim().equals("") || txtStartDate.getText().trim().equals("")|| txtLevel.getText().trim().equals("") || txtTeamInfo.getText().trim().equals("") || txtEmpPos.getText().trim().equals("")|| txtPhoneNumber.getText().trim().equals("") || txtEmpEmail.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(this, "Please fill all the fields");
+            txtName.requestFocus();
+        }else{
+        
         String updatedName = txtName.getText();
         String updatedEmpID = txtEmpID.getText();
         int updatedEmpAge = Integer.parseInt(txtEmpAge.getText());
         String updatedEmpGen = txtEmpGen.getText();
         String updatedStartDate = txtStartDate.getText();
-        int updatedLevel = Integer.parseInt(txtLevel.getText());
+        String updatedLevel = txtLevel.getText();
         String updatedTeamInfo = txtTeamInfo.getText();
         String updatedEmpPos = txtEmpPos.getText();
-        int updatedPhoneNumber = Integer.parseInt(txtPhoneNumber.getText());
+        String updatedPhoneNumber = txtPhoneNumber.getText();
         String updatedEmpEmail = txtEmpEmail.getText();
         
         int  selectedIndex = tbDetails.getSelectedRow();
@@ -359,6 +366,7 @@ public class UpdateDetails extends javax.swing.JPanel {
         txtEmpEmail.setText("");
         lblpic.setIcon(null);
         lblPicPath.setVisible(false);
+        }
         
     }//GEN-LAST:event_btnUpdateActionPerformed
 

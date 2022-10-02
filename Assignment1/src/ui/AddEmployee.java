@@ -68,6 +68,8 @@ public class AddEmployee extends javax.swing.JPanel {
         lblpic = new javax.swing.JLabel();
         lblPicPath = new javax.swing.JLabel();
 
+        setPreferredSize(new java.awt.Dimension(800, 1200));
+
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Add Employee");
@@ -251,8 +253,9 @@ public class AddEmployee extends javax.swing.JPanel {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
         
-        if(txtName.getText().equals("") || txtEmpID.getText().equals("")|| txtEmpAge.getText().equals("") || txtEmpGen.getText().equals("") || txtStartDate.getText().equals("")|| txtLevel.getText().equals("") || txtTeamInfo.getText().equals("") || txtEmpPos.getText().equals("")|| txtPhoneNumber.getText().equals("") || txtEmpEmail.getText().equals("")){
+        if(txtName.getText().trim().equals("") || txtEmpID.getText().trim().equals("")|| txtEmpAge.getText().trim().equals("") || txtEmpGen.getText().trim().equals("") || txtStartDate.getText().trim().equals("")|| txtLevel.getText().trim().equals("") || txtTeamInfo.getText().trim().equals("") || txtEmpPos.getText().trim().equals("")|| txtPhoneNumber.getText().trim().equals("") || txtEmpEmail.getText().trim().equals("")){
             JOptionPane.showMessageDialog(this, "Please fill all the fields");
+            txtName.requestFocus();
         }
         else{
         
@@ -261,10 +264,10 @@ public class AddEmployee extends javax.swing.JPanel {
             int EmpAge = Integer.parseInt(txtEmpAge.getText());
             String EmpGen = txtEmpGen.getText();
             String StartDate = txtStartDate.getText();
-            int level = Integer.parseInt(txtLevel.getText());
+            String level = txtLevel.getText();
             String TeamInfo = txtTeamInfo.getText();
             String EmpPos = txtEmpPos.getText();
-            int PhoneNumber = Integer.parseInt(txtPhoneNumber.getText());
+            String PhoneNumber = txtPhoneNumber.getText();
             String EmpEmail = txtEmpEmail.getText();
             String photo = lblPicPath.getText();
 

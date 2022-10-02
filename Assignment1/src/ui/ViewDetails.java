@@ -68,7 +68,7 @@ public class ViewDetails extends javax.swing.JPanel {
         lblpic = new javax.swing.JLabel();
         lblPicPath = new javax.swing.JLabel();
 
-        setPreferredSize(new java.awt.Dimension(100, 900));
+        setPreferredSize(new java.awt.Dimension(800, 1200));
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -331,7 +331,7 @@ public class ViewDetails extends javax.swing.JPanel {
         
         txtName.setText(selectedEmp.getEmpName());
         txtEmpID.setText(String.valueOf(selectedEmp.getEmpID()));
-        txtEmpAge.setText(String.valueOf(selectedEmp.getEmpName()));
+        txtEmpAge.setText(String.valueOf(selectedEmp.getEmpAge()));
         txtEmpGen.setText(selectedEmp.getEmpGen());
         txtStartDate.setText(selectedEmp.getStartDate());
         txtLevel.setText(String.valueOf(selectedEmp.getLevel()));

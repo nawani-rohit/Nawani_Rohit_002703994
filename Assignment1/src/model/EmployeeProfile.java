@@ -15,10 +15,10 @@ public class EmployeeProfile {
     private int EmpAge;
     private String EmpGen;
     private String StartDate;
-    private int level;
+    private String level;
     private String TeamInfo;
     private String EmpPos;
-    private int PhoneNumber;
+    private String PhoneNumber;
     private String EmpEmail;
     private String photo;
 
@@ -45,7 +45,7 @@ public class EmployeeProfile {
     public void setEmpAge(int EmpAge) {
         this.EmpAge = EmpAge;
     }
-
+    
     public String getEmpGen() {
         return EmpGen;
     }
@@ -62,11 +62,11 @@ public class EmployeeProfile {
         this.StartDate = StartDate;
     }
 
-    public int getLevel() {
+    public String getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(String level) {
         this.level = level;
     }
 
@@ -86,11 +86,11 @@ public class EmployeeProfile {
         this.EmpPos = EmpPos;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return PhoneNumber;
     }
 
-    public void setPhoneNumber(int PhoneNumber) {
+    public void setPhoneNumber(String PhoneNumber) {
         this.PhoneNumber = PhoneNumber;
     }
 
