@@ -44,32 +44,29 @@ public class MainJFrame extends javax.swing.JFrame {
         btnUpdate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("HR");
-        setPreferredSize(new java.awt.Dimension(1300, 1000));
+        setTitle("HR Management");
+        setPreferredSize(new java.awt.Dimension(1350, 1000));
 
         splitPane.setPreferredSize(new java.awt.Dimension(1200, 800));
 
         workArea.setPreferredSize(new java.awt.Dimension(1000, 800));
 
-        lblHeading.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblHeading.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         lblHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHeading.setText("Human Resourse Management");
+        lblHeading.setText("Human Resource Management");
 
         javax.swing.GroupLayout workAreaLayout = new javax.swing.GroupLayout(workArea);
         workArea.setLayout(workAreaLayout);
         workAreaLayout.setHorizontalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workAreaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblHeading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(lblHeading, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         workAreaLayout.setVerticalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(workAreaLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(315, 315, 315)
                 .addComponent(lblHeading)
-                .addContainerGap(890, Short.MAX_VALUE))
+                .addContainerGap(625, Short.MAX_VALUE))
         );
 
         splitPane.setRightComponent(workArea);

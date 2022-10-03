@@ -171,7 +171,7 @@ public class ViewDetails extends javax.swing.JPanel {
 
         lblContactInfo.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         lblContactInfo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblContactInfo.setText("Contact Info:");
+        lblContactInfo.setText("Contact Info");
         lblContactInfo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         lblEmpEmail.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
@@ -344,7 +344,7 @@ public class ViewDetails extends javax.swing.JPanel {
         EmployeeProfile selectedEmp = (EmployeeProfile) model.getValueAt(selectedIndex, 0);
         
         employeelist.deleteEmp(selectedEmp);
-        JOptionPane.showMessageDialog(this,"Deleted");
+        JOptionPane.showMessageDialog(this,"Employee record deleted");
         populateTable();
         
         lblNameValue.setText("");

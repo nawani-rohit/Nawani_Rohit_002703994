@@ -245,7 +245,7 @@
           <Font name="Segoe UI" size="15" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value=" Contact Info:"/>
+        <Property name="text" type="java.lang.String" value=" Contact Info"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblEmpEmail">

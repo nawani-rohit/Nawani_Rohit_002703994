@@ -366,7 +366,7 @@
           <Font name="Segoe UI" size="15" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
-        <Property name="text" type="java.lang.String" value="Contact Info:"/>
+        <Property name="text" type="java.lang.String" value="Contact Info"/>
         <Property name="horizontalTextPosition" type="int" value="2"/>
       </Properties>
     </Component>

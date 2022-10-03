@@ -118,7 +118,7 @@ public class AddEmployee extends javax.swing.JPanel {
 
         lblContactInfo.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         lblContactInfo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblContactInfo.setText(" Contact Info:");
+        lblContactInfo.setText(" Contact Info");
 
         lblEmpEmail.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         lblEmpEmail.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -430,8 +430,8 @@ public class AddEmployee extends javax.swing.JPanel {
     private void btnBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrowseActionPerformed
         // TODO add your handling code here:
         JFileChooser browsePhoto = new JFileChooser();
-        FileNameExtensionFilter ext = new FileNameExtensionFilter("IMAGES", "png","jpg","jpeg");
-        browsePhoto.addChoosableFileFilter(ext);
+        FileNameExtensionFilter ext = new FileNameExtensionFilter("IMAGES","png","jpg","jpeg");
+        browsePhoto.setFileFilter(ext);
         
         int showOpenDialog = browsePhoto.showOpenDialog(null);
         
