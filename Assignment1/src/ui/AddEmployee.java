@@ -6,6 +6,8 @@ package ui;
 
 import java.awt.Image;
 import java.io.File;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -24,12 +26,20 @@ public class AddEmployee extends javax.swing.JPanel {
      */
     
     EmployeeList employeelist;
+    public boolean flagName = true;
+    public boolean flagEmpID = true;
+    public boolean flagEmpAge = true;
+    public boolean flagEmpGen = true;
+    public boolean flagEmail = true;
+    public boolean flagPhoneNumber = true;
+    public boolean flagImage = true;
             
     public AddEmployee(EmployeeList employeelist) {
         initComponents();
         this.employeelist = employeelist;
         lblPicPath.setVisible(false);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -68,7 +78,7 @@ public class AddEmployee extends javax.swing.JPanel {
         lblpic = new javax.swing.JLabel();
         lblPicPath = new javax.swing.JLabel();
 
-        setPreferredSize(new java.awt.Dimension(800, 1200));
+        setPreferredSize(new java.awt.Dimension(1000, 800));
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -250,56 +260,171 @@ public class AddEmployee extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
+
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
         
-        if(txtName.getText().trim().equals("") || txtEmpID.getText().trim().equals("")|| txtEmpAge.getText().trim().equals("") || txtEmpGen.getText().trim().equals("") || txtStartDate.getText().trim().equals("")|| txtLevel.getText().trim().equals("") || txtTeamInfo.getText().trim().equals("") || txtEmpPos.getText().trim().equals("")|| txtPhoneNumber.getText().trim().equals("") || txtEmpEmail.getText().trim().equals("")){
-            JOptionPane.showMessageDialog(this, "Please fill all the fields");
-            txtName.requestFocus();
+        if(txtName.getText().trim().length() == 0){
+            JOptionPane.showMessageDialog(this, "Please fill the Name");
+        }else if(txtEmpID.getText().trim().length() == 0){
+            JOptionPane.showMessageDialog(this, "Please fill the Employee ID");
+        }else if(txtEmpAge.getText().trim().length() == 0){
+            JOptionPane.showMessageDialog(this, "Please fill the Age");
+        }else if(txtEmpGen.getText().trim().length() == 0){
+            JOptionPane.showMessageDialog(this, "Please fill the Employee Gender");
+        }else if(txtStartDate.getText().trim().length() == 0){
+            JOptionPane.showMessageDialog(this, "Please fill the Start Date");
+        }else if(txtLevel.getText().trim().length() == 0){
+            JOptionPane.showMessageDialog(this, "Please fill the Level");
+        }else if(txtTeamInfo.getText().trim().length() == 0){
+            JOptionPane.showMessageDialog(this, "Please fill the Team Info");
+        }else if(txtEmpPos.getText().trim().length() == 0){
+            JOptionPane.showMessageDialog(this, "Please fill the Employee's Position Title");
+        }else if(txtPhoneNumber.getText().trim().length() == 0){
+            JOptionPane.showMessageDialog(this, "Please fill the Phone Number");
+        }else if(txtEmpEmail.getText().trim().length() == 0){
+            JOptionPane.showMessageDialog(this, "Please fill the Email");
         }
+        
         else{
-        
-            String Name = txtName.getText();
-            String EmpID = txtEmpID.getText();
-            int EmpAge = Integer.parseInt(txtEmpAge.getText());
-            String EmpGen = txtEmpGen.getText();
-            String StartDate = txtStartDate.getText();
-            String level = txtLevel.getText();
-            String TeamInfo = txtTeamInfo.getText();
-            String EmpPos = txtEmpPos.getText();
-            String PhoneNumber = txtPhoneNumber.getText();
-            String EmpEmail = txtEmpEmail.getText();
-            String photo = lblPicPath.getText();
+            if(txtName.getText().length() > 0){
+                flagName = true;
+                String str = txtName.getText();
+                boolean nameMatches = str.matches("[a-zA-Z ]+");
+                if(!nameMatches){
+                    JOptionPane.showMessageDialog(this, "Employee Name should be character only");
+                    flagName = false;
+                }
+            }
+            
+            if(txtEmpID.getText().length() > 0){
+                flagEmpID = true;
+                for(EmployeeProfile ep : employeelist.getEmployeelist()){
+                    Object[] row = new Object[1];
+                    row[0] = ep.getEmpID();
+                    if(row[0].equals(txtEmpID.getText())){
+                        JOptionPane.showMessageDialog(this, "Employee ID already exists in record");
+                        flagEmpID = false;
+                    }
+                }
+            }
+            
+            if(txtEmpAge.getText().length() > 0){
+                try{
+                    flagEmpAge = true;
+                    if(Integer.parseInt(txtEmpAge.getText())<=0){
+                        JOptionPane.showMessageDialog(this, "Employee Age is not correct");
+                        flagEmpAge = false;
+                    }
+                }catch(NumberFormatException e){
+                    JOptionPane.showMessageDialog(this, "Employee Age is not correct");
+                    flagEmpAge = false;
+                }
+            }
+            
+            if(txtEmpGen.getText().length() > 0){
+                flagEmpGen = true;
+                String str = txtEmpGen.getText();
+                boolean nameMatches = str.matches("[a-zA-Z]+");
+                if(!nameMatches){
+                    JOptionPane.showMessageDialog(this, "Employee Gender should be character only");
+                    flagName = false;
+                }
+            }
+            
+            if(txtEmpEmail.getText().length() > 0){
+                flagEmail = true;
+                String regex = "^[a-z0-9+_.-]+@(.+)$";
+                Pattern pattern = Pattern.compile(regex);
+                Matcher matcher = pattern.matcher(txtEmpEmail.getText());
+                if(!matcher.matches()){
+                    JOptionPane.showMessageDialog(this, "Employee Email is incorrect");
+                    txtEmpEmail.setText("");
+                    flagEmail = false;
+                }
+                else{
+                    for(EmployeeProfile ep : employeelist.getEmployeelist()){
+                        Object[] row = new Object[3];
+                        row[0] = ep.getEmpEmail();
+                        if(row[0].equals(txtEmpEmail.getText())){
+                            JOptionPane.showMessageDialog(this, "Employee Email already exists in record");
+                            flagEmail = false;
+                        }
+                    }
+                }
+            }
+            
+            if(txtPhoneNumber.getText().length() > 0){
+                flagPhoneNumber = true;
+                String regex = "^\\d{10}$";
+                Pattern pattern = Pattern.compile(regex);
+                Matcher matcher = pattern.matcher(txtPhoneNumber.getText());
+                if(!matcher.matches()){
+                    JOptionPane.showMessageDialog(this, "Employee Phone number must be 10 digit only");
+                    flagPhoneNumber = false;
+                }
+                else{
+                    for(EmployeeProfile ep : employeelist.getEmployeelist()){
+                        Object[] row = new Object[1];
+                        row[0] = ep.getPhoneNumber();
+                        if(row[0].equals(txtPhoneNumber.getText())){
+                            JOptionPane.showMessageDialog(this, "Employee Phone number already present in the table");
+                            flagPhoneNumber = false;
+                        }
+                    }
+                }
+            }
+            
+            if(lblPicPath.getText().length() == 0){
+                JOptionPane.showMessageDialog(this, "Please select Employee photo");
+                flagImage = false;
+            }else{
+                flagImage = true;
+            }
+            if(flagName && flagEmpID && flagEmpAge && flagEmpGen && flagEmail && flagPhoneNumber && flagImage){
+                String Name = txtName.getText();
+                String EmpID = txtEmpID.getText();
+                int EmpAge = Integer.parseInt(txtEmpAge.getText());
+                String EmpGen = txtEmpGen.getText();
+                String StartDate = txtStartDate.getText();
+                String level = txtLevel.getText();
+                String TeamInfo = txtTeamInfo.getText();
+                String EmpPos = txtEmpPos.getText();
+                String PhoneNumber = txtPhoneNumber.getText();
+                String EmpEmail = txtEmpEmail.getText();
+                String photo = lblPicPath.getText();
 
-            EmployeeProfile ep = employeelist.addNewEmp();
+                EmployeeProfile ep = employeelist.addNewEmp();
 
-            ep.setEmpName(Name);
-            ep.setEmpID(EmpID);
-            ep.setEmpAge(EmpAge);
-            ep.setEmpGen(EmpGen);
-            ep.setStartDate(StartDate);
-            ep.setLevel(level);
-            ep.setTeamInfo(TeamInfo);
-            ep.setEmpPos(EmpPos);
-            ep.setPhoneNumber(PhoneNumber);
-            ep.setEmpEmail(EmpEmail);
-            ep.setPhoto(photo);
+                ep.setEmpName(Name);
+                ep.setEmpID(EmpID);
+                ep.setEmpAge(EmpAge);
+                ep.setEmpGen(EmpGen);
+                ep.setStartDate(StartDate);
+                ep.setLevel(level);
+                ep.setTeamInfo(TeamInfo);
+                ep.setEmpPos(EmpPos);
+                ep.setPhoneNumber(PhoneNumber);
+                ep.setEmpEmail(EmpEmail);
+                ep.setPhoto(photo);
 
-            JOptionPane.showMessageDialog(this, "New Employee added.");
+                JOptionPane.showMessageDialog(this, "New Employee added.");
 
-            txtName.setText("");
-            txtEmpID.setText("");
-            txtEmpAge.setText("");
-            txtEmpGen.setText("");
-            txtStartDate.setText("");
-            txtLevel.setText("");
-            txtTeamInfo.setText("");
-            txtEmpPos.setText("");
-            txtPhoneNumber.setText("");
-            txtEmpEmail.setText("");
-            lblpic.setIcon(null);
-        }
-        
+                txtName.setText("");
+                txtEmpID.setText("");
+                txtEmpAge.setText("");
+                txtEmpGen.setText("");
+                txtStartDate.setText("");
+                txtLevel.setText("");
+                txtTeamInfo.setText("");
+                txtEmpPos.setText("");
+                txtPhoneNumber.setText("");
+                txtEmpEmail.setText("");
+                lblpic.setIcon(null);
+            }
+        }    
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrowseActionPerformed

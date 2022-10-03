@@ -42,18 +42,18 @@ public class EmployeeList {
         
         ArrayList<EmployeeProfile> searchedEmpList = new ArrayList<>();
 
-        if(jbValue.equals("Name")){
+        if(jbValue.equalsIgnoreCase("Name")){
             for(int i = 0; i < employeelist.size(); i++){
                 EmployeeProfile ep = employeelist.get(i);
-                if(ep.getEmpName().equals(searchValue)){
+                if(ep.getEmpName().equalsIgnoreCase(searchValue)){
                     searchedEmpList.add(ep);
                 }
             }
         }else
-            if(jbValue.equals("EmpID")){
+            if(jbValue.equalsIgnoreCase("EmpID")){
             for(int i = 0; i < employeelist.size(); i++){
                 EmployeeProfile ep = employeelist.get(i);
-                if(ep.getEmpID().equals(searchValue)){
+                if(ep.getEmpID().equalsIgnoreCase(searchValue)){
                     searchedEmpList.add(ep);
                 }
             }
@@ -68,65 +68,62 @@ public class EmployeeList {
                 }
             }
             }
-            else if(jbValue.equals("Gender")){
+            else if(jbValue.equalsIgnoreCase("Gender")){
                 for(int i = 0; i < employeelist.size(); i++){
                 EmployeeProfile ep = employeelist.get(i);
-                if(ep.getEmpGen().equals(searchValue)){
+                if(ep.getEmpGen().equalsIgnoreCase(searchValue)){
                     searchedEmpList.add(ep);
                 }
             }
             }
-            else if(jbValue.equals("Start Date")){
+            else if(jbValue.equalsIgnoreCase("Start Date")){
                 for(int i = 0; i < employeelist.size(); i++){
                 EmployeeProfile ep = employeelist.get(i);
-                if(ep.getStartDate().equals(searchValue)){
+                if(ep.getStartDate().equalsIgnoreCase(searchValue)){
                     searchedEmpList.add(ep);
                 }
             }
             }
-            else if(jbValue.equals("Level")){
+            else if(jbValue.equalsIgnoreCase("Level")){
                 for(int i = 0; i < employeelist.size(); i++){
                 EmployeeProfile ep = employeelist.get(i);
-                if(ep.getLevel().equals(searchValue)){
+                if(ep.getLevel().equalsIgnoreCase(searchValue)){
                     searchedEmpList.add(ep);
                 }
             }
             }
-            else if(jbValue.equals("Team Info")){
+            else if(jbValue.equalsIgnoreCase("Team Info")){
                 for(int i = 0; i < employeelist.size(); i++){
                 EmployeeProfile ep = employeelist.get(i);
-                if(ep.getTeamInfo().equals(searchValue)){
+                if(ep.getTeamInfo().equalsIgnoreCase(searchValue)){
                     searchedEmpList.add(ep);
                 }
             }
             }
-            else if(jbValue.equals("Position")){
+            else if(jbValue.equalsIgnoreCase("Position")){
                 for(int i = 0; i < employeelist.size(); i++){
                 EmployeeProfile ep = employeelist.get(i);
-                if(ep.getEmpPos().equals(searchValue)){
+                if(ep.getEmpPos().equalsIgnoreCase(searchValue)){
                     searchedEmpList.add(ep);
                 }
             }
             }
-            else if(jbValue.equals("Phone")){
+            else if(jbValue.equalsIgnoreCase("Phone")){
                 for(int i = 0; i < employeelist.size(); i++){
                 EmployeeProfile ep = employeelist.get(i);
-                if(ep.getPhoneNumber().equals(searchValue)){
+                if(ep.getPhoneNumber().equalsIgnoreCase(searchValue)){
                     searchedEmpList.add(ep);
                 }
             }
             }
-            else if(jbValue.equals("Email")){
+            else if(jbValue.equalsIgnoreCase("Email")){
                 for(int i = 0; i < employeelist.size(); i++){
                 EmployeeProfile ep = employeelist.get(i);
-                if(ep.getEmpEmail().equals(searchValue)){
+                if(ep.getEmpEmail().equalsIgnoreCase(searchValue)){
                     searchedEmpList.add(ep);
                 }
             }
             }
-            
-        
-        
         return searchedEmpList;
     }
 }
