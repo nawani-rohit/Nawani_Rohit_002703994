@@ -45,7 +45,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HR");
-        setPreferredSize(new java.awt.Dimension(1200, 1000));
+        setPreferredSize(new java.awt.Dimension(1300, 1000));
 
         splitPane.setPreferredSize(new java.awt.Dimension(1200, 800));
 
@@ -67,9 +67,9 @@ public class MainJFrame extends javax.swing.JFrame {
         workAreaLayout.setVerticalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(workAreaLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(66, 66, 66)
                 .addComponent(lblHeading)
-                .addContainerGap(934, Short.MAX_VALUE))
+                .addContainerGap(890, Short.MAX_VALUE))
         );
 
         splitPane.setRightComponent(workArea);

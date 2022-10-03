@@ -34,6 +34,7 @@ public class UpdateDetails extends javax.swing.JPanel {
     public boolean flagEmpGen = true;
     public boolean flagEmail = true;
     public boolean flagPhoneNumber = true;
+    public boolean flagImage = true;
     
     public UpdateDetails(EmployeeList employeelist) {
         initComponents();
@@ -84,7 +85,7 @@ public class UpdateDetails extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1000, 800));
 
-        lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Update Employee Details");
 
@@ -298,7 +299,7 @@ public class UpdateDetails extends javax.swing.JPanel {
                         .addComponent(lblPicPath, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -461,8 +462,14 @@ public class UpdateDetails extends javax.swing.JPanel {
                     }
                 }
             }
+            if(lblPicPath.getText().length() == 0){
+                JOptionPane.showMessageDialog(this, "Please select Employee photo");
+                flagImage = false;
+            }else{
+                flagImage = true;
+            }
             
-            if(flagName && flagEmpID && flagEmpAge && flagEmpGen && flagEmail && flagPhoneNumber){
+            if(flagName && flagEmpID && flagEmpAge && flagEmpGen && flagEmail && flagPhoneNumber && flagImage){
                 
 
             String updatedName = txtName.getText();

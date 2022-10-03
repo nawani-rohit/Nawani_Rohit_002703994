@@ -80,7 +80,7 @@ public class AddEmployee extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1000, 800));
 
-        lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Add Employee");
 
@@ -256,7 +256,7 @@ public class AddEmployee extends javax.swing.JPanel {
                         .addComponent(lblpic, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblPicPath, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(37, Short.MAX_VALUE))))
+                        .addContainerGap(105, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
