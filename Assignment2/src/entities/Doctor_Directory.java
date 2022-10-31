@@ -8,11 +8,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author rinki
+ * @author rohit
  */
 public interface Doctor_Directory {
     
     ArrayList<Doctor> Doctor_Directory = new ArrayList<>();
-
-    
-}
+ }

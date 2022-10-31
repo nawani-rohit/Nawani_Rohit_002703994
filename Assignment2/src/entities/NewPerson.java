@@ -6,7 +6,7 @@ package entities;
 
 /**
  *
- * @author rinki
+ * @author rohit
  */
 public class NewPerson {
     String id, password, uuid, role;

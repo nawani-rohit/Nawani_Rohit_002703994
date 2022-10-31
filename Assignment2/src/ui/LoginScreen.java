@@ -85,7 +85,7 @@ public class LoginScreen extends javax.swing.JFrame {
             }
         });
 
-        cmbRoleBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-----Please Select-----", "System Admin", "Doctor", "Patient", "Person", "Community Admin", "Hospital Admin" }));
+        cmbRoleBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-----Please Select-----", "System Admin", "Doctor", "Patient", "Community Admin", "Hospital Admin" }));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Role");

@@ -6,7 +6,7 @@ package entities;
 
 /**
  *
- * @author rinki
+ * @author rohit
  */
 public class Vital_Signs {
     

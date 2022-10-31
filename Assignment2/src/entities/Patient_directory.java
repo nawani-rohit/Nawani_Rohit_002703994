@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author rinki
+ * @author rohit
  */
 public interface Patient_directory {
     

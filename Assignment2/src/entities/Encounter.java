@@ -6,7 +6,7 @@ package entities;
 
 /**
  *
- * @author rinki
+ * @author rohit
  */
 public class Encounter {
 String encounterUUId, timestamp, patientID, patientUUID, patientName, bloodpressure, temperature;

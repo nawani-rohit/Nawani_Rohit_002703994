@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author rinki
+ * @author rohit
  */
 public class Patient extends House_address{
     String patientUUID, patientId, patientName, patientPhone,  patientPincode, hospitalUUID, patientHospitalID, patientHospitalName, patientDepartment, doctorUUID, doctorId, doctorName, password;

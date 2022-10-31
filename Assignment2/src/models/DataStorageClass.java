@@ -13,7 +13,7 @@ import java.util.UUID;
 
 /**
  *
- * @author rinki
+ * @author rohit
  */
 public class DataStorageClass {
 public static ArrayList<Hospital> hospital_Screen_HospitalArrayList = new ArrayList<>();
