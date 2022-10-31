@@ -54,7 +54,6 @@ public class LoginScreen extends javax.swing.JFrame {
         setFocusable(false);
         setForeground(new java.awt.Color(255, 204, 204));
         setMinimumSize(new java.awt.Dimension(1024, 576));
-        setPreferredSize(new java.awt.Dimension(1062, 650));
 
         Login_Screen_Login_Button.setBackground(new java.awt.Color(204, 204, 255));
         Login_Screen_Login_Button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -89,7 +88,7 @@ public class LoginScreen extends javax.swing.JFrame {
             }
         });
 
-        cmbRoleBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-----Please Select-----", "System Admin", "Doctor", "Patient", "Community Admin", "Hospital Admin" }));
+        cmbRoleBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----Select Role----", "System Admin", "Doctor", "Patient", "Community Admin", "Hospital Admin" }));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Role");
@@ -189,7 +188,8 @@ public class LoginScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         String username = LoginScreen_username_textfield.getText().trim();
         String password = new String(LoginScreen_password_textfield.getPassword());
-        System.out.println("username " + username + " password " + password);
+        String role =  cmbRoleBox.getSelectedItem().toString();
+        System.out.println("username " + username + " password " + password + " role" + role);
         
         NewPerson communityUser = new NewPerson();
         
@@ -221,7 +221,18 @@ public class LoginScreen extends javax.swing.JFrame {
         communityUser.setPassword("c");
         DataStorageClass.userArrayList.add(communityUser);
         
-        if (username.equals("s") && password.equals("s")) {
+        
+        if(username.isEmpty() && password.isEmpty() && role.equals("----Select Role----")){
+            JOptionPane.showMessageDialog(null, "Please enter username and password.");
+        } else if(username.isEmpty() && password.isEmpty() && role.equals("Doctor")){
+            JOptionPane.showMessageDialog(null, "Invalid Role.");
+        } else if(username.isEmpty() && password.isEmpty() && role.equals("Patient")){
+            JOptionPane.showMessageDialog(null, "Invalid Role.");
+        } else if(username.isEmpty() && password.isEmpty() && role.equals("Community Admin")){
+            JOptionPane.showMessageDialog(null, "Invalid Role.");
+        } else if(username.isEmpty() && password.isEmpty() && role.equals("System Admin")){
+            JOptionPane.showMessageDialog(null, "Invalid Role.");
+        }else if (username.equals("s") && password.equals("s") && role.equals("System Admin")) {
             DataStorageClass.USERROLE = "SUPER_ADMIN";
             dispose();
             new SuperAdminDashboardScreen().setVisible(true);
@@ -235,36 +246,51 @@ public class LoginScreen extends javax.swing.JFrame {
                     switch (user.getRole()) {
 
                         case "HOSPITAL" -> {
+                            if(role.equals("Hospital Admin")){
                             DataStorageClass.USERROLE = "HOSPITAL";
                             DataStorageClass.USERID = user.getId();
                             dispose();
                             new SuperAdminDashboardScreen().setVisible(true);
+                            }else {
+                                JOptionPane.showMessageDialog(null, "Invalid Role.");
+                            }
                         }
                         
                         case "DOCTOR" -> {
+                            if(role.equals("Doctor")){
                             DataStorageClass.USERROLE = "DOCTOR";
                             DataStorageClass.USERID = user.getId();
                             dispose();
                             new SuperAdminDashboardScreen().setVisible(true);
+                            }else{
+                             JOptionPane.showMessageDialog(null, "Invalid Role.");   
+                            }
                         } 
                         case "PATIENT" -> {
+                            if(role.equals("Patient")){
                             DataStorageClass.USERROLE = "PATIENT";
                             DataStorageClass.USERID = user.getId();
                             dispose();
                             new SuperAdminDashboardScreen().setVisible(true);
+                            } else{
+                                JOptionPane.showMessageDialog(null, "Invalid Role."); 
+                            }
                         }
                         case "COMMUNITY_ADMIN" -> {
+                            if(role.equals("Community Admin")){
                             DataStorageClass.USERROLE = "COMMUNITY_ADMIN";
                             DataStorageClass.USERID = user.getId();
                             dispose();
                             new SuperAdminDashboardScreen().setVisible(true);
+                            } else{
+                                JOptionPane.showMessageDialog(null, "Invalid Role."); 
+                            }
                         }
                     }
 i = DataStorageClass.userArrayList.size();
                 }
                 
             }
-
         } else {
             JOptionPane.showMessageDialog(null, "No Users Found. Register First");
         }
