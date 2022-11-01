@@ -234,13 +234,23 @@ public class LoginScreen extends javax.swing.JFrame {
         DataStorageClass.userArrayList.add(communityUser);
         
         
-        if(username.isEmpty() && password.isEmpty() && role.equals("----Select Role----")){
+        if(username.isEmpty() || password.isEmpty() && role.equals("----Select Role----")){
+            JOptionPane.showMessageDialog(null, "Please enter username, password and role.");
+        }else if(username.isEmpty() && password.isEmpty() && role.equals("----Select Role----")){
+            JOptionPane.showMessageDialog(null, "Please enter role.");
+        }else if(username.isEmpty() && password.isEmpty() && role.equals("System Admin")){
+            JOptionPane.showMessageDialog(null, "Please enter role.");
+        }else if(username.isEmpty() || password.isEmpty() && role.equals("System Admin")){
             JOptionPane.showMessageDialog(null, "Please enter username and password.");
+        } else if(!username.isEmpty() && !password.isEmpty() && role.equals("----Select Role----")){
+            JOptionPane.showMessageDialog(null, "Please enter role.");
         } else if(username.isEmpty() && password.isEmpty() && role.equals("Doctor")){
             JOptionPane.showMessageDialog(null, "Invalid Role.");
         } else if(username.isEmpty() && password.isEmpty() && role.equals("Patient")){
             JOptionPane.showMessageDialog(null, "Invalid Role.");
         } else if(username.isEmpty() && password.isEmpty() && role.equals("Community Admin")){
+            JOptionPane.showMessageDialog(null, "Invalid Role.");
+        } else if(username.isEmpty() && password.isEmpty() && role.equals("Hospital Admin")){
             JOptionPane.showMessageDialog(null, "Invalid Role.");
         } else if(username.isEmpty() && password.isEmpty() && role.equals("System Admin")){
             JOptionPane.showMessageDialog(null, "Invalid Role.");
@@ -248,7 +258,9 @@ public class LoginScreen extends javax.swing.JFrame {
             DataStorageClass.USERROLE = "SUPER_ADMIN";
             dispose();
             new SuperAdminDashboardScreen().setVisible(true);
-        }else        if (!DataStorageClass.userArrayList.isEmpty()) {
+        }else    if (!username.isEmpty() && !password.isEmpty() && role.equals("System Admin")){
+                        JOptionPane.showMessageDialog(null, "Invalid Details.");
+        }   else if (!DataStorageClass.userArrayList.isEmpty()) {
             for (int i = 0; i < DataStorageClass.userArrayList.size(); i++) {
                System.out.println("username stored " + DataStorageClass.userArrayList.get(i).getId() + " password stored " + DataStorageClass.userArrayList.get(i).getPassword()
                + " role " + DataStorageClass.userArrayList.get(i).getRole() + " size " + DataStorageClass.userArrayList.size());
