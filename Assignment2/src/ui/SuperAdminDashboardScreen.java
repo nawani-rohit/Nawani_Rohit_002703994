@@ -234,12 +234,6 @@ public class SuperAdminDashboardScreen extends javax.swing.JFrame {
         Hospital_Admin_Add_PatientScreen_DoctorIDTextField = new javax.swing.JLabel();
         Hospital_Admin_Add_PatientScreen_Address_TextField = new javax.swing.JTextField();
         Hospital_Admin_Add_PatientScreen_Pincode_TextField = new javax.swing.JTextField();
-        superAdminDashboardScreen_Add_Panel10 = new javax.swing.JPanel();
-        Hospital_Admin_Add_PatientScreen_AddButton = new javax.swing.JButton();
-        Hospital_Screen_AddPatients_Tab_ResetButton = new javax.swing.JButton();
-        Hospital_Screen_AddPatient_Panel_Delete_UpdatePanel = new javax.swing.JPanel();
-        Hospital_Patient_Screen_DeleteButton = new javax.swing.JButton();
-        Hospital_Patient_Screen_UpdateButton = new javax.swing.JButton();
         jPanel46 = new javax.swing.JPanel();
         jScrollPane14 = new javax.swing.JScrollPane();
         Hospital_Admin_Add_PatientScreen_All_Patients_Table = new javax.swing.JTable();
@@ -247,6 +241,12 @@ public class SuperAdminDashboardScreen extends javax.swing.JFrame {
         Hospital_Admin_Add_PatientScreen_Button = new javax.swing.JButton();
         Hospital_Admin_Add_PatientScreen_TextField2 = new javax.swing.JTextField();
         Hospital_Admin_Add_PatientScreen_Label2 = new javax.swing.JLabel();
+        superAdminDashboardScreen_Add_Panel10 = new javax.swing.JPanel();
+        Hospital_Admin_Add_PatientScreen_AddButton = new javax.swing.JButton();
+        Hospital_Screen_AddPatients_Tab_ResetButton = new javax.swing.JButton();
+        Hospital_Screen_AddPatient_Panel_Delete_UpdatePanel = new javax.swing.JPanel();
+        Hospital_Patient_Screen_UpdateButton = new javax.swing.JButton();
+        Hospital_Patient_Screen_DeleteButton = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -1748,86 +1748,6 @@ public class SuperAdminDashboardScreen extends javax.swing.JFrame {
         Hospital_Admin_Add_PatientScreen_Pincode_TextField.setMinimumSize(new java.awt.Dimension(203, 26));
         Hospital_Admin_Add_PatientScreen_Pincode_TextField.setPreferredSize(new java.awt.Dimension(203, 26));
 
-        Hospital_Admin_Add_PatientScreen_AddButton.setBackground(new java.awt.Color(204, 204, 255));
-        Hospital_Admin_Add_PatientScreen_AddButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Hospital_Admin_Add_PatientScreen_AddButton.setText("ADD");
-        Hospital_Admin_Add_PatientScreen_AddButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Hospital_Admin_Add_PatientScreen_AddButtonActionPerformed(evt);
-            }
-        });
-
-        Hospital_Screen_AddPatients_Tab_ResetButton.setBackground(new java.awt.Color(204, 204, 255));
-        Hospital_Screen_AddPatients_Tab_ResetButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Hospital_Screen_AddPatients_Tab_ResetButton.setText("RESET");
-        Hospital_Screen_AddPatients_Tab_ResetButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Hospital_Screen_AddPatients_Tab_ResetButtonActionPerformed(evt);
-            }
-        });
-
-        Hospital_Patient_Screen_DeleteButton.setBackground(new java.awt.Color(255, 102, 102));
-        Hospital_Patient_Screen_DeleteButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Hospital_Patient_Screen_DeleteButton.setText("DELETE");
-        Hospital_Patient_Screen_DeleteButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Hospital_Patient_Screen_DeleteButtonActionPerformed(evt);
-            }
-        });
-
-        Hospital_Patient_Screen_UpdateButton.setBackground(new java.awt.Color(204, 204, 255));
-        Hospital_Patient_Screen_UpdateButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Hospital_Patient_Screen_UpdateButton.setText("UPDATE");
-        Hospital_Patient_Screen_UpdateButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Hospital_Patient_Screen_UpdateButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Hospital_Screen_AddPatient_Panel_Delete_UpdatePanelLayout = new javax.swing.GroupLayout(Hospital_Screen_AddPatient_Panel_Delete_UpdatePanel);
-        Hospital_Screen_AddPatient_Panel_Delete_UpdatePanel.setLayout(Hospital_Screen_AddPatient_Panel_Delete_UpdatePanelLayout);
-        Hospital_Screen_AddPatient_Panel_Delete_UpdatePanelLayout.setHorizontalGroup(
-            Hospital_Screen_AddPatient_Panel_Delete_UpdatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Hospital_Screen_AddPatient_Panel_Delete_UpdatePanelLayout.createSequentialGroup()
-                .addComponent(Hospital_Patient_Screen_DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Hospital_Patient_Screen_UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        Hospital_Screen_AddPatient_Panel_Delete_UpdatePanelLayout.setVerticalGroup(
-            Hospital_Screen_AddPatient_Panel_Delete_UpdatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Hospital_Screen_AddPatient_Panel_Delete_UpdatePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Hospital_Screen_AddPatient_Panel_Delete_UpdatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Hospital_Patient_Screen_DeleteButton)
-                    .addComponent(Hospital_Patient_Screen_UpdateButton))
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout superAdminDashboardScreen_Add_Panel10Layout = new javax.swing.GroupLayout(superAdminDashboardScreen_Add_Panel10);
-        superAdminDashboardScreen_Add_Panel10.setLayout(superAdminDashboardScreen_Add_Panel10Layout);
-        superAdminDashboardScreen_Add_Panel10Layout.setHorizontalGroup(
-            superAdminDashboardScreen_Add_Panel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(superAdminDashboardScreen_Add_Panel10Layout.createSequentialGroup()
-                .addGroup(superAdminDashboardScreen_Add_Panel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(superAdminDashboardScreen_Add_Panel10Layout.createSequentialGroup()
-                        .addComponent(Hospital_Screen_AddPatients_Tab_ResetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Hospital_Admin_Add_PatientScreen_AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Hospital_Screen_AddPatient_Panel_Delete_UpdatePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        superAdminDashboardScreen_Add_Panel10Layout.setVerticalGroup(
-            superAdminDashboardScreen_Add_Panel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(superAdminDashboardScreen_Add_Panel10Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(superAdminDashboardScreen_Add_Panel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Hospital_Admin_Add_PatientScreen_AddButton)
-                    .addComponent(Hospital_Screen_AddPatients_Tab_ResetButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Hospital_Screen_AddPatient_Panel_Delete_UpdatePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
         javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
         jPanel45.setLayout(jPanel45Layout);
         jPanel45Layout.setHorizontalGroup(
@@ -1855,10 +1775,7 @@ public class SuperAdminDashboardScreen extends javax.swing.JFrame {
                             .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Hospital_Admin_Add_PatientScreen_HospitalNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Hospital_Admin_Add_PatientScreen_HospitaIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Hospital_Admin_Add_PatientScreen_Pincode_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel45Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(superAdminDashboardScreen_Add_Panel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Hospital_Admin_Add_PatientScreen_Pincode_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel45Layout.setVerticalGroup(
@@ -1886,9 +1803,7 @@ public class SuperAdminDashboardScreen extends javax.swing.JFrame {
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Hospital_Admin_Add_PatientScreen_DoctorIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(superAdminDashboardScreen_Add_Panel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(115, 115, 115))
         );
 
         javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
@@ -1941,6 +1856,85 @@ public class SuperAdminDashboardScreen extends javax.swing.JFrame {
         Hospital_Admin_Add_PatientScreen_Label2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Hospital_Admin_Add_PatientScreen_Label2.setText("Patient ID");
 
+        Hospital_Admin_Add_PatientScreen_AddButton.setBackground(new java.awt.Color(204, 204, 255));
+        Hospital_Admin_Add_PatientScreen_AddButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Hospital_Admin_Add_PatientScreen_AddButton.setText("ADD");
+        Hospital_Admin_Add_PatientScreen_AddButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Hospital_Admin_Add_PatientScreen_AddButtonActionPerformed(evt);
+            }
+        });
+
+        Hospital_Screen_AddPatients_Tab_ResetButton.setBackground(new java.awt.Color(204, 204, 255));
+        Hospital_Screen_AddPatients_Tab_ResetButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Hospital_Screen_AddPatients_Tab_ResetButton.setText("RESET");
+        Hospital_Screen_AddPatients_Tab_ResetButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Hospital_Screen_AddPatients_Tab_ResetButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Hospital_Screen_AddPatient_Panel_Delete_UpdatePanelLayout = new javax.swing.GroupLayout(Hospital_Screen_AddPatient_Panel_Delete_UpdatePanel);
+        Hospital_Screen_AddPatient_Panel_Delete_UpdatePanel.setLayout(Hospital_Screen_AddPatient_Panel_Delete_UpdatePanelLayout);
+        Hospital_Screen_AddPatient_Panel_Delete_UpdatePanelLayout.setHorizontalGroup(
+            Hospital_Screen_AddPatient_Panel_Delete_UpdatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 494, Short.MAX_VALUE)
+        );
+        Hospital_Screen_AddPatient_Panel_Delete_UpdatePanelLayout.setVerticalGroup(
+            Hospital_Screen_AddPatient_Panel_Delete_UpdatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 42, Short.MAX_VALUE)
+        );
+
+        Hospital_Patient_Screen_UpdateButton.setBackground(new java.awt.Color(204, 204, 255));
+        Hospital_Patient_Screen_UpdateButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Hospital_Patient_Screen_UpdateButton.setText("UPDATE");
+        Hospital_Patient_Screen_UpdateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Hospital_Patient_Screen_UpdateButtonActionPerformed(evt);
+            }
+        });
+
+        Hospital_Patient_Screen_DeleteButton.setBackground(new java.awt.Color(255, 102, 102));
+        Hospital_Patient_Screen_DeleteButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Hospital_Patient_Screen_DeleteButton.setText("DELETE");
+        Hospital_Patient_Screen_DeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Hospital_Patient_Screen_DeleteButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout superAdminDashboardScreen_Add_Panel10Layout = new javax.swing.GroupLayout(superAdminDashboardScreen_Add_Panel10);
+        superAdminDashboardScreen_Add_Panel10.setLayout(superAdminDashboardScreen_Add_Panel10Layout);
+        superAdminDashboardScreen_Add_Panel10Layout.setHorizontalGroup(
+            superAdminDashboardScreen_Add_Panel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(superAdminDashboardScreen_Add_Panel10Layout.createSequentialGroup()
+                .addGroup(superAdminDashboardScreen_Add_Panel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(superAdminDashboardScreen_Add_Panel10Layout.createSequentialGroup()
+                        .addComponent(Hospital_Screen_AddPatients_Tab_ResetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Hospital_Admin_Add_PatientScreen_AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Hospital_Patient_Screen_UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Hospital_Patient_Screen_DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(Hospital_Screen_AddPatient_Panel_Delete_UpdatePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        superAdminDashboardScreen_Add_Panel10Layout.setVerticalGroup(
+            superAdminDashboardScreen_Add_Panel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(superAdminDashboardScreen_Add_Panel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(superAdminDashboardScreen_Add_Panel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Hospital_Admin_Add_PatientScreen_AddButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Hospital_Screen_AddPatients_Tab_ResetButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Hospital_Patient_Screen_UpdateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Hospital_Patient_Screen_DeleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Hospital_Screen_AddPatient_Panel_Delete_UpdatePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
         jPanel46.setLayout(jPanel46Layout);
         jPanel46Layout.setHorizontalGroup(
@@ -1956,7 +1950,8 @@ public class SuperAdminDashboardScreen extends javax.swing.JFrame {
                         .addComponent(Hospital_Admin_Add_PatientScreen_TextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Hospital_Admin_Add_PatientScreen_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+                    .addComponent(superAdminDashboardScreen_Add_Panel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(25, 25, 25))
         );
         jPanel46Layout.setVerticalGroup(
@@ -1970,7 +1965,9 @@ public class SuperAdminDashboardScreen extends javax.swing.JFrame {
                     .addComponent(Hospital_Admin_Add_PatientScreen_Label2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(111, 111, 111))
+                .addGap(24, 24, 24)
+                .addComponent(superAdminDashboardScreen_Add_Panel10, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
         );
 
         javax.swing.GroupLayout jPanel41Layout = new javax.swing.GroupLayout(jPanel41);
@@ -4655,7 +4652,7 @@ else
 
                         }
                         else{
-                        JOptionPane.showMessageDialog(null, "No doctors found in this hospital. Choose another hospital.");
+                        JOptionPane.showMessageDialog(null, "There are no doctors in this hospital. Choose another hospital.");
                         }
                     }
                 }
@@ -5545,7 +5542,7 @@ else
 
     //Hides elements on 'Add Patients' Superadmin Screen
     private void hideAddPatientElements() {
-        superadmin_Patient_Screen_TableTitle_Label.setText("No Patients Found. Please add at least one patient");
+        superadmin_Patient_Screen_TableTitle_Label.setText("Patient List Empty. Please add at least one patient");
 
     }
     //Shows elements on 'Add Patients' Superadmin Screen
@@ -5557,7 +5554,7 @@ else
 
     //Hides elements on 'Add Doctors' Superadmin Screen
     private void hideAddDoctorElements() {
-        superadmin_Doctors_Screen_Table_Label.setText("No Doctors Found. Please add at least one doctor");
+        superadmin_Doctors_Screen_Table_Label.setText("Doctor List Empty. Please add at least one doctor");
 
     }
     //Shows elements on 'Add Doctors' Superadmin Screen
@@ -5575,7 +5572,7 @@ else
     //Hides elements on 'Add Hospital' Superadmin Screen
 
     private void hideAddHospitalElements() {
-        hospital_Screen_tableTitleLabel.setText("No Hospitals Found. Please add at least one hospital");
+        hospital_Screen_tableTitleLabel.setText("Hospital List Empty. Please add at least one hospital");
     }
 
     private void initTabChangeListeners() {
@@ -5879,7 +5876,7 @@ USER_ROLE = DataStorageClass.USERROLE;
     }
     
             private void showSuperadmin_ApprovePatients_Screen_Elements() {
-        Approve_Patients_Screen_Table_Title.setText("New Unapproved Persons");
+        Approve_Patients_Screen_Table_Title.setText("New Persons Pending Approvals");
         Approve_Patients_Screen_ApproveButton.setVisible(true);
   
     }
