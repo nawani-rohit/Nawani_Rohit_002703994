@@ -3203,9 +3203,7 @@ else
         if (!superadmin_Encounters_Screen_SearchPatientID_TextField.getText().trim().equals("")) {
             
             if (USER_ROLE.equals("SUPER_ADMIN") || USER_ROLE.equals("DOCTOR")){
-            
             for (int i = 0; i < DataStorageClass.hospital_Screen_HospitalArrayList.size(); i++) {
-
                 patientsArrayList = DataStorageClass.hospital_Screen_HospitalArrayList.get(i).getEnrolledPatientsArrayList();
                 if (!patientsArrayList.isEmpty()) {
                     for (int j = 0; j < patientsArrayList.size(); j++) {
@@ -3349,7 +3347,6 @@ else
        patient.setDoctorId(person.getDoctorid());
        patient.setDoctorName(person.getDoctorname());
        
-//       DataStorageClass.person_registration_ArrayList.set(selectedindex, person);
        DataStorageClass.person_registration_ArrayList.remove(selectedindex);
 
        if (!DataStorageClass.hospital_Screen_HospitalArrayList.isEmpty())
@@ -3471,8 +3468,6 @@ else
     try {
         x = Integer.parseInt( hospital_Screen_hospitalPincodeTextField.getText());
     } catch (NumberFormatException nfe) {
-            
-//            JOptionPane.showMessageDialog(null, "enter integer");
             return false;
     }
     if (hospital_Screen_HospitalIdTextField.getText().trim().isEmpty()||hospital_Screen_hospitalNameTextField.getText().trim().isEmpty()
@@ -3527,9 +3522,6 @@ else
     }//GEN-LAST:event_superadmin_Patient_Screen_Patient_DepartmentComboBoxActionPerformed
 
     
-    
-    
-    
   public  boolean checksuperadminpatientfields()
     {
         String password = new String(superadmin_Patients_Screen_password_TextField.getPassword()).trim();
@@ -3582,7 +3574,6 @@ if(checksuperadminpatientfields())   {     // TODO add your handling code here:
         else  if (USER_ROLE.equals("COMMUNITY_ADMIN")) {
             
              DataStorageClass.hospital_Screen_HospitalArrayList.get(getHospitalIndexAccordingToHospitalID(filteredHospitalsforDoctorsScreenCommunityAdmin.get(selectedHospitalIndex).getHospitalID())).getEnrolledPatientsArrayList().add(patient);  
-//         DataStorageClass.hospital_Screen_HospitalArrayList.set(getHospitalIndexAccordingToHospitalID(filteredHospitalsforDoctorsScreenCommunityAdmin.get(selectedHospitalIndex).getHospitalID()), tempHospital);
          
         }
                 
@@ -3663,7 +3654,6 @@ else
                     setDataOnAllEncountersTable("viewAllEncountersTable", superadmin_Encounters_Screen_TableDataDefaultTableModel, tempencounterArrayList, superadmin_Encounters_Screen_EncounterHistoryTable);
                     superadmin_Encounters_Screen_TemperatureTextField.setText("");
                     superadmin_Encounters_Screen_BloodPressure_TextField.setText("");
-//                    break;
                     
                     }
                     else
@@ -3906,10 +3896,6 @@ if (DataStorageClass.userExistOrNot(Hospital_Admin_Add_PatientScreen_Id_Textfiel
 else
     return true;
     }
-    
-    
-    
-    
     
     
     private void Hospital_Admin_Add_PatientScreen_AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Hospital_Admin_Add_PatientScreen_AddButtonActionPerformed
@@ -5577,18 +5563,6 @@ else
 
     private void initTabChangeListeners() {
 USER_ROLE = DataStorageClass.USERROLE;
-//int delay = 1000;
-//
-//
-//        if (USER_ROLE.equals("SUPER_ADMIN"))
-//        {
-//
-//           Timer timer = new Timer( delay, (ActionEvent e) -> {
-//    System.out.println("count it" + tabbedPane.getTabCount());
-//
-//});
-//timer.setRepeats( false );
-//timer.start();
         if ((USER_ROLE.equals("SUPER_ADMIN")) || USER_ROLE.equals("COMMUNITY_ADMIN")) {
 
             tabbedPane.remove(tabbedPane.getTabCount() - 2);
@@ -6003,7 +5977,7 @@ USER_ROLE = DataStorageClass.USERROLE;
             getSelectedDoctor();
     }
 
-
+//get selected user index
         private int getselecteduserindex(String userid)
         {
             int index = -1;

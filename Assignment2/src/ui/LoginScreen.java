@@ -209,28 +209,28 @@ public class LoginScreen extends javax.swing.JFrame {
         communityUser.setUuid(DataStorageClass.generateUUID());
         communityUser.setId("allston_admin");
         communityUser.setRole("COMMUNITY_ADMIN");
-        communityUser.setPassword("c");
+        communityUser.setPassword("comm");
         DataStorageClass.userArrayList.add(communityUser);
         
         communityUser = new NewPerson();
         communityUser.setUuid(DataStorageClass.generateUUID());
         communityUser.setId("mountain_view_admin");
         communityUser.setRole("COMMUNITY_ADMIN");
-        communityUser.setPassword("c");
+        communityUser.setPassword("comm");
         DataStorageClass.userArrayList.add(communityUser);
         
         communityUser = new NewPerson();
         communityUser.setUuid(DataStorageClass.generateUUID());
         communityUser.setId("back_bay_admin");
         communityUser.setRole("COMMUNITY_ADMIN");
-        communityUser.setPassword("c");
+        communityUser.setPassword("comm");
         DataStorageClass.userArrayList.add(communityUser);
         
         communityUser = new NewPerson();
         communityUser.setUuid(DataStorageClass.generateUUID());
         communityUser.setId("brighton_admin");
         communityUser.setRole("COMMUNITY_ADMIN");
-        communityUser.setPassword("c");
+        communityUser.setPassword("comm");
         DataStorageClass.userArrayList.add(communityUser);
         
         
@@ -254,7 +254,7 @@ public class LoginScreen extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Invalid Role.");
         } else if(username.isEmpty() && password.isEmpty() && role.equals("System Admin")){
             JOptionPane.showMessageDialog(null, "Invalid Role.");
-        }else if (username.equals("s") && password.equals("s") && role.equals("System Admin")) {
+        }else if (username.equals("system_admin") && password.equals("admin") && role.equals("System Admin")) {
             DataStorageClass.USERROLE = "SUPER_ADMIN";
             dispose();
             new SuperAdminDashboardScreen().setVisible(true);
